@@ -1,0 +1,24 @@
+
+echo "Enter coefficient a:"
+read a
+
+echo "Enter coefficient b:"
+read b
+
+echo "Enter coefficient c:"
+read c
+
+disc=$((b * b - 4 * a * c))
+
+if [ $disc -lt 0 ]
+then
+    echo "The equation has no real roots."
+elif [ $disc -eq 0 ]
+then
+    root=$(echo "scale=2; -$b / (2 * $a)" | bc)
+    echo "The equation has one real root: $root"
+else
+    root1=$(echo "scale=2; (-$b + sqrt($disc)) / (2 * $a)" | bc)
+    root2=$(echo "scale=2; (-$b - sqrt($disc)) / (2 * $a)" | bc)
+    echo "The equation has two real roots: $root1 and $root2"
+fi
