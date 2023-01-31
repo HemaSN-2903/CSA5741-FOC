@@ -1,0 +1,22 @@
+echo "enter the five subject marks"
+read m1
+read m2
+read m3
+read m4
+read m5
+tot=$(expr $m1 + $m2 + $m3 + $m4 + $m5)
+echo "total : $tot"
+avg=$(expr $tot / 5)
+echo "average : $avg"
+if [ $avg -ge 60 ]
+then
+    echo "you got distinction"
+elif [ $avg -ge 50 ]
+then
+    echo "you got first class"
+elif [ $avg -ge 40 ]
+then
+    echo "you got second class"
+else
+    echo "you got failed"
+fi
